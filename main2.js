@@ -1,20 +1,28 @@
-// Scrivi una funzione che accetti una stringa come
-// argomento e la ritorni girata (es. Ciao -> oaiC)
+// Creare un array di oggetti:
+// ogni oggetto descriverà una bici da corsa
+// con le seguenti proprietà: nome e peso.
 
-function reverseString(str) {
-  // uso split() e mi divide le lettere creando un array
-  var splitString = str.split("");
+var lista = [
+  {
+    nome: "cannondale",
+    peso: 20,
+  },
+  {
+    nome: "colnago",
+    peso: 5,
+  },
+  {
+    nome: "wilier",
+    peso: 10,
+  },
+];
+console.log(lista);
 
-  // uso reverse() per rigirare l'array appena creato
-  var reverse = splitString.reverse();
+// Stampare a schermo la bici con peso minore.
+lista.forEach(function(){
+  lista.sort(function(a, b){
+    return a.peso - b.peso;
+  });
+});
 
-  // uso join() per unire gli elementi dell'array in un'unica stringa
-  var joinArray = reverse.join("");
-
-  // restituisco a return l'array completo
-  return joinArray;
-}
-
-var parola = "ciao";
-
-console.log(reverseString(parola));
+console.log(lista[0].peso);
